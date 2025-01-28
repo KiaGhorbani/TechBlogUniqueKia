@@ -19,6 +19,10 @@ class GradientColors {
     Color.fromARGB(255, 25, 0, 94),
     Color.fromARGB(255, 68, 4, 87)
   ];
+  static const List<Color> bottomNavigationBg = [
+    Color.fromARGB(0, 255, 255, 255),
+    Color.fromARGB(255, 255, 255, 255)
+  ];
   static const List<Color> posterCover = [
     Color.fromARGB(0, 0, 0, 0),
     Color.fromARGB(195, 280, 20, 81),
