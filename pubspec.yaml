@@ -39,6 +39,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  flutter_svg: ^2.0.17
+  validators: ^3.0.0
 
 
 
