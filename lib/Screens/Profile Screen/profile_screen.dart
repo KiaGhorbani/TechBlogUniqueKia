@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:techblog_unique/Constants/Components/divider.dart';
+import 'package:techblog_unique/Constants/Components/Divider/divider.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
 
 

@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import '../../Constants/material_color.dart';
 
 class MyBottomNavigation extends StatelessWidget {
-  const MyBottomNavigation({super.key,required this.size});
+  const MyBottomNavigation({super.key,required this.size, required this.screenHandler});
 
   final Size size;
+  final Function(int) screenHandler;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class MyBottomNavigation extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: ()=> screenHandler(0),
                       icon: ImageIcon(
                         Image.asset("assets/icons/BottomNavHome.png").image,
                         color: Colors.white,
@@ -48,7 +49,7 @@ class MyBottomNavigation extends StatelessWidget {
                               .image,
                           color: Colors.white)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: ()=> screenHandler(1),
                       icon: ImageIcon(
                           Image.asset("assets/icons/BottomNavUser.png")
                               .image,

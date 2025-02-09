@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
               //Home Screen Poster
               HomescreenPoster(size: size),
               //Home Screen Tags
-              HomescreenTagslist(),
+              HomeScreenTagList(),
               SizedBox(
                 height: 15,
               ),

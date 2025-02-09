@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
-import 'package:techblog_unique/Screens/splash_screen.dart';
+import 'package:techblog_unique/Screens/Register%20Screen/choosecategory_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
@@ -48,6 +48,6 @@ class MyApp extends StatelessWidget {
           )),
         )),
         debugShowCheckedModeBanner: false,
-        home: SplashScreen());
+        home: ChooseCategoryScreen());
   }
 }

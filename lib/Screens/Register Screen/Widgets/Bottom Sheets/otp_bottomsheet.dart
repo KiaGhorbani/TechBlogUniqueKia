@@ -34,7 +34,7 @@ class OtpBottomSheet extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => ChooseCategoryScreen(size: size),
+                    builder: (context) => ChooseCategoryScreen(),
                   ));
                 },
                 child: Text(
