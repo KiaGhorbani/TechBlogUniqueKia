@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:techblog_unique/Constants/Components/Strings/registerpage_strings.dart';
-import 'package:techblog_unique/Screens/Register%20Screen/Widgets/techtextfield.dart';
 
 import '../../Constants/fake_datas.dart';
 import '../../Constants/material_color.dart';
+import 'Widgets/techtextfield.dart';
 
 class ChooseCategoryScreen extends StatefulWidget {
   const ChooseCategoryScreen({super.key});

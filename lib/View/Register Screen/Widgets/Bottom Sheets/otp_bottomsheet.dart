@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:techblog_unique/Constants/Components/Strings/registerpage_strings.dart';
-import 'package:techblog_unique/Screens/Register%20Screen/Widgets/techtextfield.dart';
-import 'package:techblog_unique/Screens/Register%20Screen/choosecategory_screen.dart';
+
+import '../../choosecategory_screen.dart';
+import '../techtextfield.dart';
 
 class OtpBottomSheet extends StatelessWidget {
   const OtpBottomSheet({super.key, required this.size});

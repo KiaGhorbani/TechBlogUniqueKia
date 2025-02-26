@@ -1,4 +1,6 @@
-import 'package:techblog_unique/Models/hashtag_model.dart';
+
+
+import '../Model/hashtag_model.dart';
 
 List<HashtagsModel> tagsList = [
   HashtagsModel(title: "IOT"),

@@ -40,5 +40,13 @@ class GradientColors {
   ];
 
 
+  static const List<Color> articlesCover = [
+    Color.fromARGB(0, 242, 242, 242),
+    Color.fromARGB(255, 0, 0, 0),
+
+
+  ];
+
+
 
 }

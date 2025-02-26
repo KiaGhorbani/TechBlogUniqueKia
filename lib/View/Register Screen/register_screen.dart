@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:techblog_unique/Constants/Components/Strings/registerpage_strings.dart';
-import 'package:techblog_unique/Screens/Register%20Screen/Widgets/Bottom%20Sheets/email_bottomsheet.dart';
+
+import 'Widgets/Bottom Sheets/email_bottomsheet.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key, required this.size});

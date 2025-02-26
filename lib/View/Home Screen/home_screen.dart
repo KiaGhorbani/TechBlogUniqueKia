@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:techblog_unique/Screens/Home%20Screen/Widgets/homescreen_hottestblogs.dart';
-import 'package:techblog_unique/Screens/Home%20Screen/Widgets/homescreen_hottestpodcasts.dart';
-import 'package:techblog_unique/Screens/Home%20Screen/Widgets/homescreen_poster.dart';
-import 'package:techblog_unique/Screens/Home%20Screen/Widgets/homescreen_tagslist.dart';
+import 'package:get/get.dart';
+import 'package:techblog_unique/View/Home%20Screen/Controller/homescreen_controller.dart';
+import 'package:techblog_unique/View/Home%20Screen/Widgets/homescreen_hottestarticles.dart';
+import 'Widgets/homescreen_hottestpodcasts.dart';
+import 'Widgets/homescreen_poster.dart';
+import 'Widgets/homescreen_tagslist.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key, required this.size});
+  HomeScreen({super.key, required this.size});
 
+  final HomeScreenController homeScreenController = Get.put(HomeScreenController());
   final Size size;
 
   @override
@@ -30,13 +33,14 @@ class HomeScreen extends StatelessWidget {
                 height: 15,
               ),
               //HomePage Hottest blogs
-              HomescreenHottestblogs(size: size),
+              HomeScreenHottestArticles(
+                size: size,
+              ),
               SizedBox(
                 height: 25,
               ),
-
               //HomePage Hottest podcasts title
-              HomescreenHottestpodcasts(size: size)
+              HomeScreenHottestPodcasts(size: size)
             ],
           ),
         ),

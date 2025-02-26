@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:techblog_unique/Constants/Components/Strings/registerpage_strings.dart';
-import 'package:techblog_unique/Screens/Register%20Screen/Widgets/Bottom%20Sheets/otp_bottomsheet.dart';
-import 'package:techblog_unique/Screens/Register%20Screen/Widgets/techtextfield.dart';
+
+import '../techtextfield.dart';
+import 'otp_bottomsheet.dart';
 
 class EmailBottomSheet extends StatelessWidget {
   const EmailBottomSheet({super.key, required this.size});

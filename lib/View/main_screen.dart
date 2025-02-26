@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:techblog_unique/Constants/Components/Divider/drawer_divider.dart';
 import 'package:techblog_unique/Constants/Components/Strings/drawer_strings.dart';
-import 'package:techblog_unique/Screens/Global%20Widgets/bottom_navigation.dart';
-import 'package:techblog_unique/Screens/Home%20Screen/home_screen.dart';
-import 'package:techblog_unique/Screens/Profile%20Screen/profile_screen.dart';
+import 'package:techblog_unique/Constants/url_launcher.dart';
 import '../Constants/material_color.dart';
+import 'Global Widgets/bottom_navigation.dart';
+import 'Home Screen/home_screen.dart';
+import 'Profile Screen/profile_screen.dart';
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class MainScreen extends StatelessWidget {
+  final RxInt selectedPageIndex = 0.obs;
 
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  int selectedPageIndex = 0;
+  MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
 
     return SafeArea(
@@ -34,15 +33,23 @@ class _MainScreenState extends State<MainScreen> {
             title: Text(DrawerStrings.profile),
             ),
             DrawerDivider(size: size),
-            ListTile(onTap: (){},
+            ListTile(onTap: (){
+                myUrlLauncher(DrawerStrings.aboutUrl);
+            },
               title: Text(DrawerStrings.about),
             ),
             DrawerDivider(size: size),
-            ListTile(onTap: (){},
+            ListTile(onTap: () async{
+              await Share.share(DrawerStrings.shareUrl);
+            },
               title: Text(DrawerStrings.share),
             ),
             DrawerDivider(size: size),
-            ListTile(onTap: (){},
+            ListTile(onTap: () async{
+
+              myUrlLauncher(DrawerStrings.gitHubUrl);
+
+            },
               title: Text(DrawerStrings.gitHub),
             )
 
@@ -78,20 +85,22 @@ class _MainScreenState extends State<MainScreen> {
 
       body: Stack(
         children: [
-          Positioned.fill(
-              child: IndexedStack(
-            index: selectedPageIndex,
-            children: [
-              HomeScreen(size: size),
-              ProfileScreen(size: size),
-            ],
-          )),
+          Obx(
+          ()=> Positioned.fill(
+                child: IndexedStack(
+              index: selectedPageIndex.value,
+              children: [
+                HomeScreen(size: size),
+                ProfileScreen(size: size),
+              ],
+            )),
+          ),
           MyBottomNavigation(
             size: size,
             screenHandler: (int value) {
-              setState(() {
-                selectedPageIndex = value;
-              });
+
+                selectedPageIndex.value = value;
+
             },
           )
         ],

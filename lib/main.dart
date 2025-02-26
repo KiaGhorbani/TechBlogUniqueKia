@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
-import 'package:techblog_unique/Screens/Register%20Screen/choosecategory_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:techblog_unique/View/main_screen.dart';
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -48,6 +49,6 @@ class MyApp extends StatelessWidget {
           )),
         )),
         debugShowCheckedModeBanner: false,
-        home: ChooseCategoryScreen());
+        home: MainScreen());
   }
 }
