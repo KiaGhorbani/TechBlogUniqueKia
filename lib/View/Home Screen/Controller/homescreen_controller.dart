@@ -19,7 +19,7 @@ class HomeScreenController extends GetxController {
   }
 
   void getHomeItems() async {
-    var response = await MyDioService().get(MyApi.homeItems);
+    dynamic response = await MyDioService().get(MyApi.homeItems);
 
     if (response.statusCode == 200) {
       response.data['top_visited'].forEach((item) {
