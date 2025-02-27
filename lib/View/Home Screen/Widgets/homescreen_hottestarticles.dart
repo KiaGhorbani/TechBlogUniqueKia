@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:techblog_unique/View/Home%20Screen/Controller/homescreen_controller.dart';
 import '../../../Constants/material_color.dart';
@@ -8,7 +10,8 @@ class HomeScreenHottestArticles extends StatelessWidget {
 
   HomeScreenHottestArticles({super.key, required this.size});
 
-  final HomeScreenController homeScreenController = Get.find<HomeScreenController>();
+  final HomeScreenController homeScreenController =
+      Get.find<HomeScreenController>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class HomeScreenHottestArticles extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Obx(
-                  () => ListView.builder(
+              () => ListView.builder(
                 itemCount: homeScreenController.topArticles.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
@@ -52,31 +55,48 @@ class HomeScreenHottestArticles extends StatelessWidget {
                       children: [
                         Stack(
                           children: [
-                            Container(
+                            SizedBox(
                               height: size.height / 7,
                               width: size.width / 2.5,
-                              foregroundDecoration: BoxDecoration(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(16)),
-                                  gradient: LinearGradient(
-                                      colors: GradientColors.articlesCover,
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter)),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(16)),
-                                image: DecorationImage(
-                                    image: NetworkImage(homeScreenController
-                                        .topArticles[index].image!),
-                                    fit: BoxFit.cover),
+                              child: CachedNetworkImage(
+                                imageUrl: homeScreenController
+                                    .topArticles[index].image!,
+                                imageBuilder: (context, imageProvider) =>
+                                    Container(
+                                  foregroundDecoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(16)),
+                                      gradient: LinearGradient(
+                                        colors: GradientColors.hottestListCover,
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                      )),
+                                  decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(16)),
+                                      image: DecorationImage(
+                                          image: imageProvider,
+                                          fit: BoxFit.cover)),
+                                ),
+                                errorWidget: (context, url, error) => Icon(
+                                  Icons.image_not_supported_rounded,
+                                  size: 32,
+                                  color: Colors.grey,
+                                ),
+                                placeholder: (context, url) => SpinKitHourGlass(
+                                  color: SolidColors.primaryColor,
+                                  size: 32,
+                                ),
                               ),
                             ),
                             Positioned(
-                                top: 95,
+                                top: 98,
                                 right: 10,
                                 child: Text(
-                                  homeScreenController.topArticles[index].author!,
-                                  style:
-                                  TextStyle(color: Colors.white, fontSize: 13),
+                                  homeScreenController
+                                      .topArticles[index].author!,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 13),
                                 )),
                             Positioned(
                                 top: 98,
@@ -84,7 +104,8 @@ class HomeScreenHottestArticles extends StatelessWidget {
                                 child: Row(
                                   children: [
                                     Text(
-                                      homeScreenController.topArticles[index].view!,
+                                      homeScreenController
+                                          .topArticles[index].view!,
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 13),
                                     ),

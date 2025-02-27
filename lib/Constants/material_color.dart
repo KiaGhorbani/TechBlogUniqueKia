@@ -40,7 +40,7 @@ class GradientColors {
   ];
 
 
-  static const List<Color> articlesCover = [
+  static const List<Color> hottestListCover = [
     Color.fromARGB(0, 242, 242, 242),
     Color.fromARGB(255, 0, 0, 0),
 

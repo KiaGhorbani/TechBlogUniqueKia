@@ -9,7 +9,8 @@ import 'Widgets/homescreen_tagslist.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key, required this.size});
 
-  final HomeScreenController homeScreenController = Get.put(HomeScreenController());
+  final HomeScreenController homeScreenController =
+      Get.put(HomeScreenController());
   final Size size;
 
   @override
@@ -40,7 +41,12 @@ class HomeScreen extends StatelessWidget {
                 height: 25,
               ),
               //HomePage Hottest podcasts title
-              HomeScreenHottestPodcasts(size: size)
+              HomeScreenHottestPodcasts(size: size),
+              //Container For Seeing Podcast Titles
+              Container(
+                color: Colors.transparent,
+                height: 90,
+              )
             ],
           ),
         ),

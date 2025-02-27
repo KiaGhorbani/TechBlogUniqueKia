@@ -25,6 +25,10 @@ class HomeScreenController extends GetxController {
       response.data['top_visited'].forEach((item) {
         topArticles.add(ArticleModel.fromJson(item));
       });
+
+      response.data['top_podcasts'].forEach((item) {
+        topPodcasts.add(PodcastModel.fromJson(item));
+      });
     }
   }
 }
