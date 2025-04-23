@@ -44,8 +44,7 @@ class HomeScreenHottestArticles extends StatelessWidget {
           height: size.height / 4.3,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Obx(
-              () => ListView.builder(
+            child: ListView.builder(
                 itemCount: homeScreenController.topArticles.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
@@ -136,7 +135,6 @@ class HomeScreenHottestArticles extends StatelessWidget {
                   );
                 },
               ),
-            ),
           ),
         ),
       ],
