@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:techblog_unique/Constants/fake_datas.dart';
+import 'package:get/get.dart';
 
 import '../../../Constants/material_color.dart';
+import '../Controller/homescreen_controller.dart';
 
 class HomeScreenTagList extends StatelessWidget {
-  const HomeScreenTagList({super.key});
+   HomeScreenTagList({super.key});
+
+  final HomeScreenController homeScreenController =
+  Get.find<HomeScreenController>();
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,7 @@ class HomeScreenTagList extends StatelessWidget {
         height: 85,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: tagsList.length,
+          itemCount: homeScreenController.homePageTags.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.fromLTRB(0, 37, 16, 16),
@@ -42,7 +46,7 @@ class HomeScreenTagList extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                       child: Text(
-                        tagsList[index].title,
+                       homeScreenController.homePageTags[index].title!,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

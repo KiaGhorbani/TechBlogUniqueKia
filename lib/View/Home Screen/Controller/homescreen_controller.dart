@@ -20,30 +20,37 @@ class HomeScreenController extends GetxController {
   }
 
   void getHomeItems() async {
-
     loading.value = true;
-
 
 
     dynamic response = await MyDioService().get(MyApi.homeItems);
 
+    //Homepage Poster
+    poster.value = PosterModel.fromJson(response.data['poster']);
+
+
+    //HomePage Tags List
     if (response.statusCode == 200) {
-      response.data['top_visited'].forEach((item) {
-        topArticles.add(ArticleModel.fromJson(item));
+      response.data['tags'].forEach((item) {
+        homePageTags.add(TagsModel.fromJson(item));
       });
 
-      response.data['top_podcasts'].forEach((item) {
-        topPodcasts.add(PodcastModel.fromJson(item));
-      });
 
-      poster.value = PosterModel.fromJson(response.data['poster']);
-
-
-
-      loading.value = false;
+      //HomePage Top Visited Blogs
+      if (response.statusCode == 200) {
+        response.data['top_visited'].forEach((item) {
+          topArticles.add(ArticleModel.fromJson(item));
+        });
 
 
+        //HomePage Top Visited Podcasts
+        response.data['top_podcasts'].forEach((item) {
+          topPodcasts.add(PodcastModel.fromJson(item));
+        });
 
+
+        loading.value = false;
+      }
     }
   }
 }
