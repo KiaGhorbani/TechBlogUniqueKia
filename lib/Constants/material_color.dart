@@ -14,7 +14,7 @@ class SolidColors {
   static const Color subText = Color.fromARGB(255, 197, 197, 197);
   static const Color dividerColor = Color.fromARGB(255, 112, 112, 112);
   static const Color hintColor = Color.fromARGB(255, 219, 219, 219);
-  static const Color selectedCategoryColor = Color.fromARGB(255, 242, 242, 242);
+  static const Color selectedCategoryColor = Color.fromARGB(255, 235, 235, 235);
 }
 
 class GradientColors {
@@ -43,6 +43,13 @@ class GradientColors {
   static const List<Color> hottestListCover = [
     Color.fromARGB(0, 242, 242, 242),
     Color.fromARGB(255, 0, 0, 0),
+
+
+  ];
+
+  static const List<Color> articleScreenCover = [
+    Color.fromARGB(255, 46, 3, 71),
+    Color.fromARGB(0, 0, 0, 0),
 
 
   ];

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:techblog_unique/View/Article%20List%20Screen/articlelist_screen.dart';
+import 'package:techblog_unique/View/Article%20Screen/article_screen.dart';
 import 'package:techblog_unique/View/main_screen.dart';
 
 
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
           )),
         )),
         debugShowCheckedModeBanner: false,
-        home: ArticleListScreen()
+        home: ArticleScreen()
         //MainScreen()
     );
   }

@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 //HomePage Hottest blogs
                 HomeScreenHottestArticles(
-                  size: size,
+                  size: size, title: 'مشاهده ی داغ ترین نوشته ها',
                 ),
                 SizedBox(
                   height: 25,
