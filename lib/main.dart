@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:techblog_unique/View/Article%20List%20Screen/articlelist_screen.dart';
@@ -22,15 +23,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
-          Locale('fa', ''),
-        ],
+      locale: Locale("fa"),
         theme: ThemeData(
             elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(backgroundColor: WidgetStateProperty.resolveWith(
@@ -51,7 +50,7 @@ class MyApp extends StatelessWidget {
           )),
         )),
         debugShowCheckedModeBanner: false,
-        home: ArticleScreen()
+        home: ArticleListScreen()
         //MainScreen()
     );
   }

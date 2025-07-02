@@ -4,8 +4,9 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../../../Constants/material_color.dart';
 
+
 class ArticlePoster extends StatelessWidget {
-  const ArticlePoster({super.key, required this.imageUrl});
+   const ArticlePoster({super.key, required this.imageUrl});
   final String imageUrl;
 
   @override
@@ -15,12 +16,7 @@ class ArticlePoster extends StatelessWidget {
         //Poster
         CachedNetworkImage(
           imageUrl: imageUrl,
-          imageBuilder: (context, imageProvider) => Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
-                image: DecorationImage(
-                    image: imageProvider, fit: BoxFit.cover)),
-          ),
+          imageBuilder: (context, imageProvider) => Image(image: imageProvider),
           errorWidget: (context, url, error) =>
               Image.asset("assets/images/Articlepageplaceholder.jpg"),
           placeholder: (context, url) => SpinKitHourGlass(
