@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:techblog_unique/View/Register%20Screen/register_screen.dart';
 
 import '../../Constants/material_color.dart';
 
@@ -43,7 +45,11 @@ class MyBottomNavigation extends StatelessWidget {
                         color: Colors.white,
                       )),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(RegisterScreen(size: size));
+
+                        
+                      },
                       icon: ImageIcon(
                           Image.asset("assets/icons/BottomNavWrite.png")
                               .image,

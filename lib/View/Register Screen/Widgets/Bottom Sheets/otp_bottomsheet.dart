@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:techblog_unique/Constants/Components/Strings/registerpage_strings.dart';
 
+import '../../Controller/register_controller.dart';
 import '../../choosecategory_screen.dart';
 import '../techtextfield.dart';
 
 class OtpBottomSheet extends StatelessWidget {
-  const OtpBottomSheet({super.key, required this.size});
+  OtpBottomSheet({super.key, required this.size});
 
   final Size size;
+  final RegisterController registerController = Get.find<RegisterController>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +33,13 @@ class OtpBottomSheet extends StatelessWidget {
             //TextField
             TechTextField(
               hintText: RegisterPageStrings.congrats,
+              controller: registerController.otpTextController,
             ),
             //Button
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => ChooseCategoryScreen(),
-                  ));
+                  registerController.verifyOtp();
+
                 },
                 child: Text(
                   RegisterPageStrings.buttonChildContinue,

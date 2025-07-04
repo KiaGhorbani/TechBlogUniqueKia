@@ -4,22 +4,16 @@ import 'package:techblog_unique/Model/HomePage/article_model.dart';
 import '../../../Constants/my_api.dart';
 import '../../../Services/dio_service.dart';
 
-class ArticleListController extends GetxController {
+class ArticleListFilteredController extends GetxController {
   RxList<ArticleModel> articleList = RxList();
   RxBool loading = false.obs;
 
-
-  @override
-  void onInit() {
-    super.onInit();
-    getArticleListItems();
-  }
-
-  void getArticleListItems() async {
+  void getArticleListItemsByTags({required String tagId}) async {
     loading.value = true;
 
     //TODO user id from get storage
-    dynamic response = await MyDioService().get(MyApi.articleListItems);
+    dynamic response = await MyDioService().get(
+        "${MyApi.baseUrl}article/get.php?command=get_articles_with_tag_id&tag_id=$tagId&user_id=1");
 
     articleList.clear();
     if (response.statusCode == 200) {
@@ -29,7 +23,7 @@ class ArticleListController extends GetxController {
       });
 
       loading.value = false;
+
     }
   }
-
 }

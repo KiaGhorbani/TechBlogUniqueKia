@@ -9,15 +9,12 @@ import 'package:techblog_unique/View/Article%20Screen/Widgets/article_relatedart
 import 'package:techblog_unique/View/Article%20Screen/Widgets/article_relatedtags.dart';
 import 'package:techblog_unique/View/Article%20Screen/Widgets/article_title.dart';
 import 'package:techblog_unique/View/Global%20Widgets/loading.dart';
-import 'package:techblog_unique/View/Home%20Screen/Controller/homescreen_controller.dart';
 
 class ArticleScreen extends StatelessWidget {
   ArticleScreen({super.key});
 
   final ArticleScreenController articleScreenController =
       Get.put(ArticleScreenController());
-  final HomeScreenController homeScreenController =
-      Get.put(HomeScreenController());
 
   @override
   Widget build(BuildContext context) {

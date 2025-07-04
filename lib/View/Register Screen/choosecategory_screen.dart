@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:techblog_unique/Constants/Components/Strings/registerpage_strings.dart';
 
 import '../../Constants/fake_datas.dart';
 import '../../Constants/material_color.dart';
+import 'Controller/register_controller.dart';
 import 'Widgets/techtextfield.dart';
 
 class ChooseCategoryScreen extends StatefulWidget {
@@ -17,6 +19,7 @@ class _ChooseCategoryScreenState extends State<ChooseCategoryScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final RegisterController registerController = Get.put(RegisterController());
 
     return SafeArea(
         child: Scaffold(
@@ -42,7 +45,10 @@ class _ChooseCategoryScreenState extends State<ChooseCategoryScreen> {
             //TextField
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
-              child: TechTextField(hintText: RegisterPageStrings.name),
+              child: TechTextField(
+                hintText: RegisterPageStrings.name,
+                controller: registerController.nameTextController,
+              ),
             ),
             SizedBox(
               height: 30,
@@ -51,72 +57,76 @@ class _ChooseCategoryScreenState extends State<ChooseCategoryScreen> {
             Text(RegisterPageStrings.chooseCategories),
             //Categories List
             SizedBox(
-            width: double.infinity,
-            height: 85,
-            child: GridView.builder(
-              physics: ClampingScrollPhysics(),
-              itemCount: tagsList.length,
-              scrollDirection: Axis.horizontal,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 5,
-                  childAspectRatio: 0.25),
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if(!selectedTags.contains(tagsList[index])) {
-                        selectedTags.add(tagsList[index]);
-                      }
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 8.0 , right: 8, left: 8),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: GradientColors.tagsColor,
-                              begin: Alignment.centerRight,
-                              end: Alignment.centerLeft),
-                          borderRadius:
-                          BorderRadius.all(Radius.circular(16))),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ImageIcon(
-                              Image.asset("assets/icons/Hashtag.png").image,
-                              color: Colors.white,
-                              size: 12,
+              width: double.infinity,
+              height: 85,
+              child: GridView.builder(
+                physics: ClampingScrollPhysics(),
+                itemCount: tagsList.length,
+                scrollDirection: Axis.horizontal,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5,
+                    childAspectRatio: 0.25),
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if (!selectedTags.contains(tagsList[index])) {
+                          selectedTags.add(tagsList[index]);
+                        }
+                      });
+                    },
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(top: 8.0, right: 8, left: 8),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                colors: GradientColors.tagsColor,
+                                begin: Alignment.centerRight,
+                                end: Alignment.centerLeft),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(16))),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ImageIcon(
+                                Image.asset("assets/icons/Hashtag.png").image,
+                                color: Colors.white,
+                                size: 12,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Text(
-                              tagsList[index].title,
-                              style: TextStyle(color: Colors.white),
+                            SizedBox(
+                              width: 5,
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                              child: Text(
+                                tagsList[index].title,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-
-
-
-
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
-          ),
-            SizedBox(height: 35,),
+            SizedBox(
+              height: 35,
+            ),
             //Arrow Icon
-            Image.asset("assets/images/Arrow.png",scale: 2,),
-            SizedBox(height: 35,),
+            Image.asset(
+              "assets/images/Arrow.png",
+              scale: 2,
+            ),
+            SizedBox(
+              height: 35,
+            ),
             //Selected Categories List
             SizedBox(
               width: double.infinity,
@@ -138,11 +148,13 @@ class _ChooseCategoryScreenState extends State<ChooseCategoryScreen> {
                       });
                     },
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0, right: 8, left: 8),
+                      padding:
+                          const EdgeInsets.only(top: 8.0, right: 8, left: 8),
                       child: Container(
                         decoration: BoxDecoration(
                             color: SolidColors.selectedCategoryColor,
-                            borderRadius: BorderRadius.all(Radius.circular(16))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(16))),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -164,8 +176,6 @@ class _ChooseCategoryScreenState extends State<ChooseCategoryScreen> {
                 },
               ),
             ),
-
-
           ],
         ),
       ),

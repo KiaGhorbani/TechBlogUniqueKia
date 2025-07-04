@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:techblog_unique/View/Article%20List%20Screen/Controller/articlelist_controller.dart';
-import 'package:techblog_unique/View/Article%20List%20Screen/articlelist_screen.dart';
+import 'package:techblog_unique/View/Article%20List%20Screen/articlelistfiltered_screen.dart';
 
 import '../../../Constants/material_color.dart';
+import '../../Article List Screen/Controller/articlelistfiltered_controller.dart';
 import '../Controller/articlescreen_controller.dart';
 
 class ArticleTags extends StatelessWidget {
-  ArticleTags({super.key,});
+  ArticleTags({
+    super.key,
+  });
 
   final ArticleScreenController articleScreenController =
       Get.find<ArticleScreenController>();
-  final ArticleListController articleListController =
-  Get.find<ArticleListController>();
+  final ArticleListFilteredController articleListFilteredController =
+      Get.put(ArticleListFilteredController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +26,13 @@ class ArticleTags extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              String tagId = articleScreenController.relatedTags[index].id!;
-                articleListController.getArticleListItemsByTags(tagId);
-                Get.to(ArticleListScreen());
-
-
+              articleListFilteredController.getArticleListItemsByTags(
+                  tagId: articleScreenController.relatedTags[index].id!);
+              Get.to(ArticleListFilteredScreen(
+                filteredTagName:
+                    articleScreenController.relatedTags[index].title!,
+              ));
             },
-
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 32, 16, 16),
               child: Container(

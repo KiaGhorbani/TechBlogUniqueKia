@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:techblog_unique/View/Article%20List%20Screen/articlelist_screen.dart';
 import 'package:techblog_unique/View/Article%20Screen/article_screen.dart';
+import 'package:techblog_unique/View/Register%20Screen/choosecategory_screen.dart';
 import 'package:techblog_unique/View/main_screen.dart';
+import 'package:techblog_unique/View/splash_screen.dart';
 
 
-void main() {
+void main() async{
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: SolidColors.statusBarColor,
       statusBarIconBrightness: Brightness.dark,
       systemNavigationBarColor: SolidColors.navBarColor,
       systemNavigationBarIconBrightness: Brightness.dark));
+      await GetStorage.init();
 
   runApp(const MyApp());
 }
@@ -50,7 +54,7 @@ class MyApp extends StatelessWidget {
           )),
         )),
         debugShowCheckedModeBanner: false,
-        home: ArticleListScreen()
+        home: SplashScreen()
         //MainScreen()
     );
   }

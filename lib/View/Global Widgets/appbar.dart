@@ -5,7 +5,7 @@ PreferredSize myAppBar({required String title}) {
   return PreferredSize(
       preferredSize: Size.fromHeight(70),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.fromLTRB(16,8,8,8),
         child: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,

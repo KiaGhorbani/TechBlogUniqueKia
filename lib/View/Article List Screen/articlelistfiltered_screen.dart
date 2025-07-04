@@ -2,19 +2,19 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:techblog_unique/View/Article%20List%20Screen/Controller/articlelist_controller.dart';
 import 'package:techblog_unique/View/Article%20Screen/Controller/articlescreen_controller.dart';
-
 import 'package:techblog_unique/View/Global%20Widgets/appbar.dart';
 import 'package:techblog_unique/View/Global%20Widgets/loading.dart';
 
 import '../../Constants/material_color.dart';
+import 'Controller/articlelistfiltered_controller.dart';
 
-class ArticleListScreen extends StatelessWidget {
-  ArticleListScreen({super.key});
+class ArticleListFilteredScreen extends StatelessWidget {
+  ArticleListFilteredScreen({super.key, required this.filteredTagName});
 
-  final ArticleListController articleListController =
-      Get.put(ArticleListController());
+  final String filteredTagName;
+  final ArticleListFilteredController articleListFilteredController =
+      Get.put(ArticleListFilteredController());
   final ArticleScreenController articleScreenController =
       Get.put(ArticleScreenController());
 
@@ -24,18 +24,18 @@ class ArticleListScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        appBar: myAppBar(title: 'مقالات جدید'),
+        appBar: myAppBar(title: filteredTagName),
         body: Obx(
-          () => articleListController.loading.value == false
+          () => articleListFilteredController.loading.value == false
               ? SizedBox(
                   child: ListView.builder(
-                    itemCount: articleListController.articleList.length,
+                    itemCount: articleListFilteredController.articleList.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
                           articleScreenController.getArticleInfo(
-                              articleId:
-                                  articleListController.articleList[index].id!);
+                              articleId: articleListFilteredController
+                                  .articleList[index].id!);
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -47,7 +47,7 @@ class ArticleListScreen extends StatelessWidget {
                                 height: size.height / 8,
                                 width: size.width / 3,
                                 child: CachedNetworkImage(
-                                  imageUrl: articleListController
+                                  imageUrl: articleListFilteredController
                                       .articleList[index].image!,
                                   imageBuilder: (context, imageProvider) =>
                                       Container(
@@ -81,7 +81,7 @@ class ArticleListScreen extends StatelessWidget {
                                       height: 70,
                                       width: size.width / 1.67,
                                       child: Text(
-                                        articleListController
+                                        articleListFilteredController
                                             .articleList[index].title!,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 2,
@@ -89,13 +89,13 @@ class ArticleListScreen extends StatelessWidget {
                                   Row(
                                     children: [
                                       //Article Author
-                                      Text(articleListController
+                                      Text(articleListFilteredController
                                           .articleList[index].author!),
                                       SizedBox(
                                         width: 5,
                                       ),
                                       //Article View
-                                      Text(articleListController
+                                      Text(articleListFilteredController
                                           .articleList[index].view!),
                                       SizedBox(
                                         width: 1,
@@ -105,7 +105,7 @@ class ArticleListScreen extends StatelessWidget {
                                         width: 30,
                                       ),
                                       //Article Category Name
-                                      Text(articleListController
+                                      Text(articleListFilteredController
                                           .articleList[index].catName!),
                                     ],
                                   ),
