@@ -14,6 +14,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
 class MainScreen extends StatelessWidget {
   final RxInt selectedPageIndex = 0.obs;
 
+
   MainScreen({super.key});
 
   @override

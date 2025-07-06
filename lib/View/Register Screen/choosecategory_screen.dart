@@ -19,7 +19,7 @@ class _ChooseCategoryScreenState extends State<ChooseCategoryScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    final RegisterController registerController = Get.put(RegisterController());
+    final RegisterController registerController = Get.find<RegisterController>();
 
     return SafeArea(
         child: Scaffold(

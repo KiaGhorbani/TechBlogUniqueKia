@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:techblog_unique/View/Register%20Screen/register_screen.dart';
+
 
 import '../../Constants/material_color.dart';
+import '../Register Screen/Controller/register_controller.dart';
 
 class MyBottomNavigation extends StatelessWidget {
-  const MyBottomNavigation({super.key,required this.size, required this.screenHandler});
+   MyBottomNavigation({super.key,required this.size, required this.screenHandler});
 
   final Size size;
   final Function(int) screenHandler;
+   final RegisterController registerController = Get.find<RegisterController>();
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +48,7 @@ class MyBottomNavigation extends StatelessWidget {
                       )),
                   IconButton(
                       onPressed: () {
-                        Get.to(RegisterScreen(size: size));
-
+                          registerController.toggleLogin();
                         
                       },
                       icon: ImageIcon(

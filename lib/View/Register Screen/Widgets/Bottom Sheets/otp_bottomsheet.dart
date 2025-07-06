@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:techblog_unique/Constants/Components/Strings/registerpage_strings.dart';
 
 import '../../Controller/register_controller.dart';
-import '../../choosecategory_screen.dart';
 import '../techtextfield.dart';
 
 class OtpBottomSheet extends StatelessWidget {

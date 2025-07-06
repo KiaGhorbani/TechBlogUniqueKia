@@ -5,12 +5,12 @@ import 'package:techblog_unique/Constants/Components/Strings/registerpage_string
 import 'Widgets/Bottom Sheets/email_bottomsheet.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key, required this.size});
+  const RegisterScreen({super.key});
 
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
           body: Center(

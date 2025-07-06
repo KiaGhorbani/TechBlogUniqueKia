@@ -10,7 +10,7 @@ class EmailBottomSheet extends StatelessWidget {
   EmailBottomSheet({super.key, required this.size});
 
   final Size size;
-  final RegisterController registerController = Get.put(RegisterController());
+  final RegisterController registerController = Get.find<RegisterController>();
 
   @override
   Widget build(BuildContext context) {
