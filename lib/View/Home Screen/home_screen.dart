@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:techblog_unique/View/Global%20Widgets/loading.dart';
 import 'package:techblog_unique/View/Home%20Screen/Controller/homescreen_controller.dart';
 import 'package:techblog_unique/View/Home%20Screen/Widgets/homescreen_hottestarticles.dart';
+import '../../Global Widgets/loading.dart';
 import 'Widgets/homescreen_hottestpodcasts.dart';
 import 'Widgets/homescreen_poster.dart';
 import 'Widgets/homescreen_tagslist.dart';

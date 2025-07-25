@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
-import '../../Global Widgets/loading.dart';
+import '../../../Global Widgets/loading.dart';
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({super.key, required this.articleText});

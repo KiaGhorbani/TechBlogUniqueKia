@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:techblog_unique/View/Article%20Screen/Controller/articlescreen_controller.dart';
-import 'package:techblog_unique/View/Global%20Widgets/appbar.dart';
-import 'package:techblog_unique/View/Global%20Widgets/loading.dart';
 
 import '../../Constants/material_color.dart';
+import '../../Global Widgets/appbar.dart';
+import '../../Global Widgets/loading.dart';
 import 'Controller/articlelistfiltered_controller.dart';
 
 class ArticleListFilteredScreen extends StatelessWidget {

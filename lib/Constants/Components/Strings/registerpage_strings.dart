@@ -13,4 +13,5 @@ class RegisterPageStrings {
   static String chooseCategories = "دسته بندی هایی که دوست داری رو انتخاب کن";
   static String congrats = """تبریک میگم ، ایمیل با موفقیت تایید شد
 لطفا اطلاعات ثبت نام رو کامل کن""";
+  static String manageArticle = """هنوز هیچ مقاله ای به جامعه ی گیک های فارسی اضافه نکردی!!!""";
 }

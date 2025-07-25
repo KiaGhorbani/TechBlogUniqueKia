@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 
 
 import '../../Constants/material_color.dart';
-import '../Register Screen/Controller/register_controller.dart';
+import '../View/Register Screen/Controller/register_controller.dart';
+
 
 class MyBottomNavigation extends StatelessWidget {
    MyBottomNavigation({super.key,required this.size, required this.screenHandler});

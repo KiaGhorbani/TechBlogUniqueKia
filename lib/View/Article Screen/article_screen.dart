@@ -8,13 +8,14 @@ import 'package:techblog_unique/View/Article%20Screen/Widgets/article_poster.dar
 import 'package:techblog_unique/View/Article%20Screen/Widgets/article_relatedarticles.dart';
 import 'package:techblog_unique/View/Article%20Screen/Widgets/article_relatedtags.dart';
 import 'package:techblog_unique/View/Article%20Screen/Widgets/article_title.dart';
-import 'package:techblog_unique/View/Global%20Widgets/loading.dart';
+
+import '../../Global Widgets/loading.dart';
 
 class ArticleScreen extends StatelessWidget {
   ArticleScreen({super.key});
 
   final ArticleScreenController articleScreenController =
-      Get.put(ArticleScreenController());
+      Get.find<ArticleScreenController>();
 
   @override
   Widget build(BuildContext context) {

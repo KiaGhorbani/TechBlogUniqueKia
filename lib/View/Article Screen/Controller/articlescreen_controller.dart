@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
+import 'package:techblog_unique/Constants/pages_routing.dart';
 import 'package:techblog_unique/Model/ArticlePage/articleinfo_model.dart';
 import 'package:techblog_unique/Model/HomePage/article_model.dart';
 import 'package:techblog_unique/Model/HomePage/tags_model.dart';
-import 'package:techblog_unique/View/Article%20Screen/article_screen.dart';
+
 
 import '../../../Constants/my_api.dart';
 import '../../../Services/dio_service.dart';
@@ -41,6 +42,6 @@ class ArticleScreenController extends GetxController {
     }
 
     loading.value = false;
-    Get.to(ArticleScreen());
+    Get.toNamed(MyRoutes.articleScreen);
   }
 }

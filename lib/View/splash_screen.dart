@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get/get.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
-import 'package:techblog_unique/View/main_screen.dart';
+import 'package:techblog_unique/Constants/pages_routing.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(Duration(seconds: 3)).then((value){
 
-      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MainScreen()));
+      Get.offAndToNamed(MyRoutes.mainScreen);
 
 
 

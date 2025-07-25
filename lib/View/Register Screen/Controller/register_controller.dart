@@ -1,11 +1,12 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:techblog_unique/Constants/my_api.dart';
 import 'package:techblog_unique/Constants/storage.dart';
 import 'package:techblog_unique/Services/dio_service.dart';
+import 'package:techblog_unique/View/Register%20Screen/Widgets/Bottom%20Sheets/loggedin_bottomsheet.dart';
 import 'package:techblog_unique/View/Register%20Screen/register_screen.dart';
 import 'package:techblog_unique/View/main_screen.dart';
 
@@ -66,8 +67,7 @@ class RegisterController extends GetxController {
     if (box.read(MyStorage().token) == null) {
       Get.to(() => RegisterScreen());
     } else {
-      log("Player Registered");
+      RegisterBottomSheet().articlePodcastManagement();
     }
   }
 }
-

@@ -4,7 +4,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:techblog_unique/View/Register%20Screen/Bindings/register_binding.dart';
+import 'package:techblog_unique/Constants/pages_routing.dart';
 import 'package:techblog_unique/View/splash_screen.dart';
 
 
@@ -25,12 +25,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialBinding: RegisterBinding(),
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
+      getPages: MyRoutes.myViews,
       locale: Locale("fa"),
         theme: ThemeData(
             elevatedButtonTheme: ElevatedButtonThemeData(
