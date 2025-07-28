@@ -45,11 +45,11 @@ class RegisterController extends GetxController {
 
     switch (responseStatus) {
       case 'verified':
-        box.write(MyStorage().token, response.data['token']);
-        box.write(MyStorage().userId, response.data['user_id']);
+        box.write(MyStorage.token, response.data['token']);
+        box.write(MyStorage.userId, response.data['user_id']);
 
-        log("Kia Message Token: ${box.read(MyStorage().token)}");
-        log("Kia Message User ID: ${box.read(MyStorage().userId)}");
+        log("Kia Message Token: ${box.read(MyStorage.token)}");
+        log("Kia Message User ID: ${box.read(MyStorage.userId)}");
 
         Get.offAll(() => MainScreen());
         break;
@@ -64,7 +64,7 @@ class RegisterController extends GetxController {
   }
 
   void toggleLogin() {
-    if (box.read(MyStorage().token) == null) {
+    if (box.read(MyStorage.token) == null) {
       Get.to(() => RegisterScreen());
     } else {
       RegisterBottomSheet().articlePodcastManagement();

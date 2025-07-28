@@ -1,4 +1,4 @@
 class MyStorage {
-  String token = "Token";
-  String userId = "userId";
+  static String token = "Token";
+  static String userId = "userId";
 }
