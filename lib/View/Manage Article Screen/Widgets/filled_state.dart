@@ -6,6 +6,7 @@ import 'package:techblog_unique/Global%20Widgets/loading.dart';
 import 'package:techblog_unique/View/Manage%20Article%20Screen/Controller/managearticle_controller.dart';
 
 import '../../../Constants/material_color.dart';
+import '../../../Constants/pages_routing.dart';
 
 class ManageArticleFilledState extends StatelessWidget {
   ManageArticleFilledState({super.key, required this.size});
@@ -114,7 +115,7 @@ class ManageArticleFilledState extends StatelessWidget {
               left: 5,
               child: GestureDetector(
                 onTap: () {
-                  //TODO Route to manage article screen
+                  Get.toNamed(MyRoutes.postArticleScreen);
                 },
                 child: Container(
                   width: size.width / 1,

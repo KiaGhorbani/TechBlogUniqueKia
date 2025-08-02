@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:techblog_unique/Constants/pages_routing.dart';
 
 import '../../../Constants/Components/Strings/registerpage_strings.dart';
 import '../../../Constants/material_color.dart';
 
 class ManageArticleEmptyState extends StatelessWidget {
   const ManageArticleEmptyState({super.key, required this.size});
+
   final Size size;
 
   @override
@@ -35,12 +38,8 @@ class ManageArticleEmptyState extends StatelessWidget {
           //Button
           GestureDetector(
             onTap: () {
-              //TODO Route to manage article screen
-
-
-
+              Get.toNamed(MyRoutes.postArticleScreen);
             },
-
             child: Container(
               width: size.width / 1.3,
               height: 50,
