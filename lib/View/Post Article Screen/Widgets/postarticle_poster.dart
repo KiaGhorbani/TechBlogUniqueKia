@@ -25,29 +25,15 @@ class PostArticlePoster extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: GradientColors.articleScreenCover)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_outlined,
-                      color: Colors.white,
-                    ),
-                    onPressed: Get.back,
-                  ),
-                  Expanded(child: SizedBox()),
-                  Icon(
-                    Icons.share,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_outlined,
                     color: Colors.white,
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(
-                    Icons.bookmark_border,
-                    color: Colors.white,
-                  ),
-                ],
+                  onPressed: Get.back,
+                ),
               ),
             )),
         //Button For Choosing Poster From Gallery

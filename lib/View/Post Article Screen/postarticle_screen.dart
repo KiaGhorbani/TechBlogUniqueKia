@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:techblog_unique/View/Article%20Screen/Controller/articlescreen_controller.dart';
+import 'package:techblog_unique/View/Post%20Article%20Screen/Widgets/postarticle_category.dart';
 import 'package:techblog_unique/View/Post%20Article%20Screen/Widgets/postarticle_poster.dart';
 import 'package:techblog_unique/View/Post%20Article%20Screen/Widgets/postarticle_title.dart';
 
@@ -25,10 +26,12 @@ class PostArticleScreen extends StatelessWidget {
                 children: [
                   //Article Poster
                   PostArticlePoster(),
-                  //Title
+                  //Article Title
                   PostArticleTitle(),
                   //Article Body
                   PostArticleBody(),
+                  //Article Choose Category
+                  PostArticleCategory()
                 ],
               )
             : SizedBox(height: 750, child: MyLoading())),
