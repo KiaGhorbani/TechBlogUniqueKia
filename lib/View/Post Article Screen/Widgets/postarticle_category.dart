@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+
 
 import '../../../Constants/material_color.dart';
-import '../../../Global Widgets/loading.dart';
 
 class PostArticleCategory extends StatelessWidget {
   const PostArticleCategory({
