@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:techblog_unique/View/Article%20Screen/Controller/articlescreen_controller.dart';
 import 'package:techblog_unique/View/Post%20Article%20Screen/Widgets/postarticle_category.dart';
 import 'package:techblog_unique/View/Post%20Article%20Screen/Widgets/postarticle_poster.dart';
 import 'package:techblog_unique/View/Post%20Article%20Screen/Widgets/postarticle_title.dart';
 
-import '../../Global Widgets/loading.dart';
+
+import 'Controller/postarticle_controller.dart';
 import 'Widgets/postarticle_body.dart';
 
 class PostArticleScreen extends StatelessWidget {
   PostArticleScreen({super.key});
 
-  final ArticleScreenController articleScreenController =
-      Get.find<ArticleScreenController>();
+  final PostArticleController postArticleController =
+  Get.find<PostArticleController>();
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,8 @@ class PostArticleScreen extends StatelessWidget {
         child: Scaffold(
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
-        child: Obx(() => articleScreenController.loading.value == false
-            ? Column(
+        child:
+             Column(
                 children: [
                   //Article Poster
                   PostArticlePoster(),
@@ -34,8 +34,10 @@ class PostArticleScreen extends StatelessWidget {
                   PostArticleCategory()
                 ],
               )
-            : SizedBox(height: 750, child: MyLoading())),
-      ),
-    ));
+
+
+    )
+        )
+    );
   }
 }

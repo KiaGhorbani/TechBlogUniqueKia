@@ -11,7 +11,7 @@ import '../../../Constants/storage.dart';
 import '../../../Services/dio_service.dart';
 
 class ArticleScreenController extends GetxController {
-  Rx<ArticleInfoModel> articleInfo = ArticleInfoModel().obs;
+  Rx<ArticleInfoModel> articleInfo = ArticleInfoModel('','','').obs;
   RxList<TagsModel> relatedTags = RxList();
   RxList<ArticleModel> relatedArticles = RxList();
 

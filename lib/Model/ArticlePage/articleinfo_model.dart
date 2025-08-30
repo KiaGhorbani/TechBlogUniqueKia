@@ -1,7 +1,6 @@
 import '../../Constants/my_api.dart';
 
 class ArticleInfoModel {
-
   String? id;
   String? title;
   String? content;
@@ -15,7 +14,7 @@ class ArticleInfoModel {
   bool? isFavorite;
 
 
-  ArticleInfoModel();
+  ArticleInfoModel(this.title, this.image, this.content);
 
   ArticleInfoModel.fromJson(Map<String, dynamic> item) {
     id = item["info"]["id"];
@@ -30,8 +29,4 @@ class ArticleInfoModel {
     createdAt = item["info"]["created_at"];
     isFavorite = item["isFavorite"];
   }
-
-
-
-
 }

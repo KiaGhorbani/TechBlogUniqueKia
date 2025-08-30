@@ -6,6 +6,6 @@ class PostArticleBinding implements Bindings {
   @override
   void dependencies() {
 
-    Get.lazyPut(()=>PostArticleController);
+    Get.lazyPut(()=>PostArticleController());
   }
 }
