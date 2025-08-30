@@ -25,25 +25,25 @@ class EditBodyScreen extends StatelessWidget {
               HtmlEditor(
                 controller: controller,
                 htmlEditorOptions: HtmlEditorOptions(
-                  hint: "Write Here",
+                    hint: "Write Here",
                     initialText: postArticleController.article.value.content,
                     shouldEnsureVisible: true),
                 callbacks: Callbacks(
-                  onChangeContent: (p0) =>
-                      postArticleController.article.value.content == p0,
-                ),
+                    onChangeContent: (p0) =>
+                        postArticleController.article.update(
+                          (val) {
+                            val?.content = p0;
+                          },
+                        )),
               ),
-              Row(
-                children: [
-                  ElevatedButton(onPressed: () {
-                    
-                  }, child: Text("data"))
-                  
-                  
-                ],
-                
-                
-              )
+              ElevatedButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: Text(
+                    "ثبت تغییرات",
+                    style: TextStyle(color: Colors.white),
+                  ))
             ],
           ),
         ),
