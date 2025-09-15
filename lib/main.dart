@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:techblog_unique/Constants/material_color.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:techblog_unique/Constants/pages_routing.dart';
+import 'package:techblog_unique/View/Podcast%20Screen/podcast_screen.dart';
 import 'package:techblog_unique/View/splash_screen.dart';
 
 
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
           )),
         )),
         debugShowCheckedModeBanner: false,
-        home: SplashScreen()
+        home: PodcastScreen()
         //MainScreen()
     );
   }

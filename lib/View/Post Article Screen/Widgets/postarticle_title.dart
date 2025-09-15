@@ -19,7 +19,7 @@ class PostArticleTitle extends StatelessWidget {
       child: Column(
         children: [
           GestureDetector(
-            onTap: () => postArticleController.updateTitle(),
+            onTap: () => postArticleController.updateArticleTitle(),
             child: Row(
               children: [
                 ImageIcon(

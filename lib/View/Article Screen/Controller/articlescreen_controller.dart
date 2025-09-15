@@ -22,7 +22,7 @@ class ArticleScreenController extends GetxController {
 
 
     dynamic response = await MyDioService().get(
-        "${MyApi.baseUrl}article/get.php?command=info&id=$articleId&user_id=${GetStorage().read(MyStorage.userId)}");
+        "${MyUrl.baseUrl}article/get.php?command=info&id=$articleId&user_id=${GetStorage().read(MyStorage.userId)}");
 
     if (response.statusCode == 200) {
       articleInfo.value = ArticleInfoModel.fromJson(response.data);

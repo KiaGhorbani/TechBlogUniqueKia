@@ -15,7 +15,7 @@ class ArticleListFilteredController extends GetxController {
 
 
     dynamic response = await MyDioService().get(
-        "${MyApi.baseUrl}article/get.php?command=get_articles_with_tag_id&tag_id=$tagId&user_id=${GetStorage().read(MyStorage.userId)}");
+        "${MyUrl.baseUrl}article/get.php?command=get_articles_with_tag_id&tag_id=$tagId&user_id=${GetStorage().read(MyStorage.userId)}");
 
     articleList.clear();
     if (response.statusCode == 200) {

@@ -24,7 +24,7 @@ class RegisterController extends GetxController {
       'command': 'register'
     };
 
-    dynamic response = await MyDioService().post(dataMap, MyApi.register);
+    dynamic response = await MyDioService().post(dataMap, MyUrl.register);
     email = emailTextController.text;
     userId = response.data['user_id'];
 
@@ -39,7 +39,7 @@ class RegisterController extends GetxController {
       'command': 'verify'
     };
 
-    dynamic response = await MyDioService().post(dataMap, MyApi.register);
+    dynamic response = await MyDioService().post(dataMap, MyUrl.register);
     log(response.data['response']);
     String responseStatus = response.data['response'];
 

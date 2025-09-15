@@ -1,4 +1,4 @@
-class MyApi{
+class MyUrl{
 
   static const String baseUrl = "https://techblog.sasansafari.com/Techblog/api/";
   static const String hostUrl = "https://techblog.sasansafari.com";
@@ -7,6 +7,7 @@ class MyApi{
   static const String articleItems = "${baseUrl}article/get.php?command=info&id=1&user_id=1";
   static const String register = "${baseUrl}register/action.php";
   static const String publishingArticles = "${baseUrl}article/get.php?command=published_by_me&user_id=";
+  static const String postUrl = "${baseUrl}article/post.php";
 
 
 

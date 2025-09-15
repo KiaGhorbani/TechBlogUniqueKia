@@ -14,6 +14,6 @@ class PosterModel {
   PosterModel.fromJson(Map<String, dynamic> item) {
     id = item["id"];
     title = item["title"];
-    image = MyApi.hostUrl + item["image"];
+    image = MyUrl.hostUrl + item["image"];
   }
 }

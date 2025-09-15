@@ -20,7 +20,7 @@ class ArticleInfoModel {
     id = item["info"]["id"];
     title = item["info"]["title"];
     content = item["info"]["content"];
-    image = MyApi.hostUrl + item["info"]["image"];
+    image = MyUrl.hostUrl + item["info"]["image"];
     catId = item["info"]["cat_id"];
     catName = item["info"]["cat_name"];
     author = item["info"]["author"];

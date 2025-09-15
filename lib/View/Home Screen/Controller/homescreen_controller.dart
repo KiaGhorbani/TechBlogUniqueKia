@@ -23,7 +23,7 @@ class HomeScreenController extends GetxController {
     loading.value = true;
 
 
-    dynamic response = await MyDioService().get(MyApi.homeItems);
+    dynamic response = await MyDioService().get(MyUrl.homeItems);
 
     //Homepage Poster
     poster.value = PosterModel.fromJson(response.data['poster']);

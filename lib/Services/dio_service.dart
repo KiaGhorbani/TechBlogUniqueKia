@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:dio/dio.dart' as dio_fm;
+import 'package:get_storage/get_storage.dart';
+import 'package:techblog_unique/Constants/storage.dart';
 
 class MyDioService {
   Dio dio = Dio();
@@ -20,7 +22,12 @@ class MyDioService {
   }
 
   Future<dynamic> post(Map<String, dynamic> dataMap, String url) async {
-    return await dio
+    String token = GetStorage().read(MyStorage.token);
+
+    dio.options.headers['Authorization'] = token;
+
+
+      return await dio
         .post(url,
             data: dio_fm.FormData.fromMap(dataMap),
             options: Options(

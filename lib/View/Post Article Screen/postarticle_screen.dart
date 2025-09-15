@@ -31,7 +31,25 @@ class PostArticleScreen extends StatelessWidget {
                   //Article Body
                   PostArticleBody(),
                   //Article Choose Category
-                  PostArticleCategory()
+                  PostArticleCategory(),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  //Button To Post Article
+                  ElevatedButton(
+                      onPressed: () {
+                        postArticleController.postArticle();
+                      },
+                      child: Obx(
+                        ()=> Text(
+                          postArticleController.loading.value==true?
+                          "صبر کن...": "پست"
+                         ,
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                      ))
+
+
                 ],
               )
 

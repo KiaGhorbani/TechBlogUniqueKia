@@ -20,7 +20,7 @@ class ManageArticleController extends GetxController {
     loading.value = true;
 
     dynamic response = await MyDioService()
-        .get(MyApi.publishingArticles + GetStorage().read(MyStorage.userId));
+        .get(MyUrl.publishingArticles + GetStorage().read(MyStorage.userId));
 
     if (response.statusCode == 200) {
       //Manage Article List Articles

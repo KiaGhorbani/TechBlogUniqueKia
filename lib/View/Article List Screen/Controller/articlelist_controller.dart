@@ -20,7 +20,7 @@ class ArticleListController extends GetxController {
   void getArticleListItems() async {
     loading.value = true;
 
-    dynamic response = await MyDioService().get(MyApi.articleListItems+GetStorage().read(MyStorage.userId));
+    dynamic response = await MyDioService().get(MyUrl.articleListItems+GetStorage().read(MyStorage.userId));
 
     if (response.statusCode == 200) {
       //Article List Page Articles
