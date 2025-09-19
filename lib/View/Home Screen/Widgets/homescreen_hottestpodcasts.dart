@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:techblog_unique/Constants/pages_routing.dart';
 
 import '../../../Constants/material_color.dart';
 import '../Controller/homescreen_controller.dart';
@@ -45,10 +46,13 @@ class HomeScreenHottestPodcasts extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView.builder(
-                itemCount: homeScreenController.topPodcasts.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return Padding(
+              itemCount: homeScreenController.topPodcasts.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () => Get.toNamed(MyRoutes.podcastScreen,
+                      arguments: homeScreenController.topPodcasts[index].id),
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
@@ -85,9 +89,10 @@ class HomeScreenHottestPodcasts extends StatelessWidget {
                         )
                       ],
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ],

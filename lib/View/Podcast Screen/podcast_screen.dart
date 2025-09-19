@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:techblog_unique/Model/HomePage/podcast_model.dart';
 import 'package:techblog_unique/View/Podcast%20Screen/Controller/podcastscreen_controller.dart';
 import 'package:techblog_unique/View/Podcast%20Screen/Widgets/podcast_authorinfo.dart';
 import 'package:techblog_unique/View/Podcast%20Screen/Widgets/podcast_body.dart';
@@ -11,10 +12,14 @@ import 'package:techblog_unique/View/Podcast%20Screen/Widgets/podcast_title.dart
 import '../../Global Widgets/loading.dart';
 
 class PodcastScreen extends StatelessWidget {
-  PodcastScreen({super.key});
+  late final PodcastScreenController podcastScreenController;
+  late final PodcastModel podcastModel;
 
-  final PodcastScreenController podcastScreenController =
-      Get.put(PodcastScreenController());
+  PodcastScreen({super.key}) {
+    podcastModel = Get.arguments;
+    podcastScreenController =
+        Get.put(PodcastScreenController(podcastId: podcastModel.id!));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +33,12 @@ class PodcastScreen extends StatelessWidget {
                 children: [
                   //Article Poster
                   PodcastPoster(
-                    imageUrl: "podcastScreenController.articleInfo.value.image!",
+                    imageUrl:
+                        "podcastScreenController.articleInfo.value.image!",
                   ),
                   //Title
                   PodcastTitle(
-                    articleTitle:
-                  "  عنوان پادکست",
+                    articleTitle: "  عنوان پادکست",
                   ),
                   //Podcast Author Info
                   PodcastAuthorInfo(
@@ -42,7 +47,9 @@ class PodcastScreen extends StatelessWidget {
                   //Podcast Body
                   PodcastBody(),
                   //Podcast Control Panel
-                    PodcastControlPanel(size: size,)
+                  PodcastControlPanel(
+                    size: size,
+                  )
                 ],
               )
             : SizedBox(height: 750, child: MyLoading())),

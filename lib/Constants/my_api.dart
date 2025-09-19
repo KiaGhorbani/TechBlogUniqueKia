@@ -8,6 +8,7 @@ class MyUrl{
   static const String register = "${baseUrl}register/action.php";
   static const String publishingArticles = "${baseUrl}article/get.php?command=published_by_me&user_id=";
   static const String postUrl = "${baseUrl}article/post.php";
+  static const String podcastItems = "${baseUrl}podcast/get.php?command=get_files&podcats_id=";
 
 
 
